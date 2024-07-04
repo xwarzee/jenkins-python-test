@@ -133,7 +133,7 @@ pipeline {
 
     post {
         always {
-            sh 'conda remove --yes -n ${BUILD_TAG} --all'
+            // sh 'conda remove --yes -n ${BUILD_TAG} --all'
         }
         failure {
             emailext (
