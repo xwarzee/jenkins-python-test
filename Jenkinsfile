@@ -28,8 +28,7 @@ pipeline {
             steps {
                 echo "Building virtualenv"
                 sh  ''' conda create --yes --prefix ${WORKSPACE}/${BUILD_TAG} python 
-                        // conda init bash
-                        conda activate ${BUILD_TAG}
+                        source activate ${BUILD_TAG}
                         pip install -r requirements/dev.txt
                     '''
             }
