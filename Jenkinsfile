@@ -13,6 +13,7 @@ pipeline {
     }
 
     environment {
+      // use the following command to set the PATH: > conda env list
       PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
     }
 
