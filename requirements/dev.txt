@@ -7,7 +7,7 @@ pyflakes==3.2.0
 pylint==3.2.5
 Radon==6.0.1
 coverage==7.5.4
-setuptools-sloccount=0.1
+setuptools-sloccount==0.1
 
 # Testing
 pytest==8.2.2
