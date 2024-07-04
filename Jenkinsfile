@@ -13,7 +13,7 @@ pipeline {
     }
 
     environment {
-      PATH="/usr/local/bin:$PATH"
+      PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
     }
 
     stages {
