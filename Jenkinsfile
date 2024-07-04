@@ -132,9 +132,9 @@ pipeline {
     }
 
     post {
-        //always {
-            // sh 'conda remove --yes -n ${BUILD_TAG} --all'
-        //}
+        always {
+             sh 'conda remove --yes -n ${BUILD_TAG} --all'
+        }
         failure {
             emailext (
                 subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
