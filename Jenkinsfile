@@ -91,7 +91,7 @@ pipeline {
         stage('Acceptance tests') {
             steps {
                 sh  ''' source activate ${BUILD_TAG}
-                        python -m behave -f=formatters.cucumber_json:PrettyCucumberJSONFormatter -o ./reports/acceptance.json || true
+                        python -m behave --format behave_cucumber_formatter:PrettyCucumberJSONFormatter -o ./reports/acceptance.json || true
                     '''
             }
             post {
