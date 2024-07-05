@@ -76,9 +76,11 @@ pipeline {
 
         stage('Unit tests') {
             steps {
-                sh  ''' source activate ${BUILD_TAG}
-                        pytest --verbose --junit-xml reports/unit_tests.xml
-                    '''
+                withEnv(["HOME=${env.WORKSPACE}"]) {
+                    sh  ''' source activate ${BUILD_TAG}
+                            pytest --verbose --junit-xml reports/unit_tests.xml
+                        '''
+                }
             }
             post {
                 always {
