@@ -48,7 +48,7 @@ pipeline {
                 echo "Test coverage"
                 sh  ''' source activate ${BUILD_TAG}
                         coverage run irisvmpy/iris.py 1 1 2 3
-                        coverage xml -o reports/coverage.xml
+                        python -m coverage xml -o reports/coverage.xml
                     '''
                 echo "Style check"
                 sh  ''' source activate ${BUILD_TAG}
@@ -77,7 +77,7 @@ pipeline {
         stage('Unit tests') {
             steps {
                 sh  ''' source activate ${BUILD_TAG}
-                        pytest --verbose --junit-xml reports/unit_tests.xml
+                        python -m pytest --verbose --junit-xml reports/unit_tests.xml
                     '''
             }
             post {
